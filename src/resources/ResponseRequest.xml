@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"/>
+    <soap:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+               wsu:Id="body">
+        <ns4:createRequestResponse xmlns="http://smev.gosuslugi.ru/rev111111"
+                                   xmlns:ns2="http://portal.fccland.ru/types/"
+                                   xmlns:ns3="http://www.w3.org/2004/08/xop/include"
+                                   xmlns:ns4="http://portal.fccland.ru/rt/">
+            <Message>
+                <Sender>
+                    <Code>RRTR01001</Code>
+                    <Name>Росреестр</Name>
+                </Sender>
+                <Recipient>
+                    <Code>FMS001001</Code>
+                    <Name>ФМС</Name>
+                </Recipient>
+                <Originator>
+                    <Code>FMS001001</Code>
+                    <Name>ФМС</Name>
+                </Originator>
+                <TypeCode>GSRV</TypeCode>
+                <Status>ACCEPT</Status>
+                <Date>2016-06-12T21:37:08.884+03:00</Date>
+                <ExchangeType>2</ExchangeType>
+                <ServiceCode>10000013628</ServiceCode>
+                <TestMsg>TRUE</TestMsg>
+            </Message>
+            <MessageData>
+                <AppData>
+                    <ns2:requestNumber>59-163415</ns2:requestNumber>
+                </AppData>
+            </MessageData>
+        </ns4:createRequestResponse>
+    </soap:Body>
+</soap:Envelope>

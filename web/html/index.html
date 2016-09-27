@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <link href="/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Выписка из ЕГРП</title>
+</head>
+<body>
+
+
+
+
+<div class="container">
+    <h2>Получение выписки из Единого государственного реестра прав</h2></div>
+
+<div id="exTab2" class="container">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#1" data-toggle="tab">Формирование заявки</a>
+        </li>
+        <li><a href="#2" data-toggle="tab">История заявок</a>
+        </li>
+        <li><a href="#3" data-toggle="tab">Помощь</a>
+        </li>
+    </ul>
+
+    <div class="tab-content ">
+        <div class="tab-pane active" id="1">
+            < id="mainForm" method="post" action="/request">
+            <h3>Объект недвижимости</h3>
+            <fieldset><legend>Сведения об объекте недвижимости</legend>
+                <p>Тип объекта
+                    <select class="form-control" size="1" id="objTypeSelect" style="width: 25%;">
+                        <option value="0">Жилой дом</option>
+                        <option value="1">Здание (нежилое)</option>
+                        <option value="2">Земельный участок</option>
+                        <option value="3">Квартира</option>
+                        <option value="4">Комната</option>
+                        <option value="5">Объект незавершённого строительства</option>
+                        <option value="6">Помещение (нежилое)</option>
+                        <option value="7">Предприятие как имущественный комплекс (ПИК)</option>
+                        <option value="8">Сооружение</option>
+                        <option value="9">Участок недр</option>
+                    </select>
+                </p>
+                <p>Единицы измерения площади
+                    <br><select class="form-control" id="areaMeasureSelect" size="1" style="width: 25%;">
+                        <option value="0">Квадратный метр</option>
+                    </select>
+                    <input class="form-control" type="text" id="areaSize" placeholder="Размер площади" style="width: 40%; margin-top: 4px">
+                </p>
+            </fieldset>
+            <br>
+            <fieldset><legend>Местонахождение объекта недвижимости</legend>
+                <p>Регион
+                    <br><select class="form-control" id="reqionSelect" size="1" style="width: 25%;">
+                        <option value="0">Калужская область</option>
+                    </select>
+                </p>
+                <p>Тип населённого пункта
+                    <br><select class="form-control" id="citySelect" size="1" style="width: 25%;">
+                        <option value="0">Город</option>
+                    </select>
+                    <input  class="form-control" id="nameOfSettlement" type="text" id="nameOfSettlement" placeholder="Название населённого пункта" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>Улица
+                    <br><select  class="form-control" id="streetSelect" size="1" style="width: 25%;">
+                        <option value="0">Улица</option>
+                    </select>
+                    <input class="form-control" id="streetName" type="text" id="streetName" placeholder="Улица" style="width: 40%;margin-top: 4px">
+                </p>
+
+                <p>Тип адресного элемента
+                    <br><select class="form-control" id="houseSelect" size="1" style="width: 25%;">
+                        <option value="0">Дом</option>
+                    </select>
+                    <input class="form-control" type="number" id="l1value" placeholder="Номер дома" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>Тип адресного элемента
+                    <br><select class="form-control" id="buildingSelect" size="1" style="width: 25%;">
+                        <option value="0">Строение</option>
+                    </select>
+                    <input class="form-control" type="number" id="l2value"  style="width: 40%;margin-top: 4px">
+                </p>
+                <p>Тип адресного элемента
+                    <br><select class="form-control" id="housingSelect" size="1" style="width: 25%;">
+                        <option value="0">Корпус</option>
+                    </select>
+                    <input class="form-control" type="number" id="l3value" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>Тип адресного элемента
+                    <br><select class="form-control" id="flatSelect" size="1" style="width: 25%;">
+                        <option value="0" >Квартира</option>
+                    </select>
+                    <input class="form-control" type="number" id="apartmentNumberObject" placeholder="Номер квартиры" style="width: 40%;margin-top: 4px">
+                </p>
+                <p><textarea class="form-control" id="otherLocationObject" placeholder="Дополнительная информация" style="width: 40%; height: 20%;"></textarea></p>
+            </fieldset>
+
+            <h3>Сведения об организации запрашивающей сведения</h3>
+            <br>
+            <fieldset><legend>Сведения об органе власти</legend>
+                Категория заявителя
+                <br><select class="form-control" id="declarantNameSelect" size="1" style="width: 25%;">
+                    <option value="0">Пенсионный фонд</option>
+                </select>
+                <input class="form-control" id="govMail" type="email" style="width: 40%;margin-top: 4px" placeholder="Адрес электронной почты">
+            </fieldset>
+
+            <br>
+            <fieldset><legend>Сведения о представителе заявителя</legend>
+                <p>
+                    Категория заявителя
+                    <br><select class="form-control" id="agencyDeclarantCategorySelect" size="1" style="width: 25%;margin-top: 4px">
+                        <option value="0">Категория заявителя</option>
+                    </select>
+                </p>
+                <p>Фамилия
+                    <input class="form-control"  type="text" id="secondName" style="width: 40%;">
+                </p>
+                <p>Имя
+                    <input class="form-control"  type="text" id="firstName" style="width: 40%;">
+                </p>
+                <p>Отчество
+                    <input class="form-control"  type="text" id="patronymic" style="width: 40%;">
+                </p>
+                <p>СНИЛС
+                    <input class="form-control"  type="text" id="SNILS" style="width: 40%;">
+                </p>
+                <hr>
+                <p>Вид документа
+                    <select class="form-control" id="agencyDocumentTypeSelect" size="1" style="width: 25%;">
+                        <option value="0">Паспорт гражданина РФ</option>
+                    </select>
+                </p>
+                <p><input class="form-control" id="passportSerial" type="number" placeholder="Серия документа" style="width: 40%;"></p>
+                <p><input class="form-control" id="passportNumber" type="number" placeholder="Номер документа" style="width: 40%;"></p>
+                <p><input class="form-control" id="passportGiver" type="text" placeholder="Кем выдан" style="width: 40%;"></p>
+                <p><input class="form-control" id="passportDate" type="date" placeholder="Дата выдачи документа" style="width: 40%;"></p>
+                <hr>
+                <p><input class="form-control" id="agencyMail" type="email" placeholder="Адрес электронной почты" style="width: 40%;"></p>
+                <p><input class="form-control" id="agencyPhone" type="tel" placeholder="Телефон" style="width: 40%;"></p>
+                <p><input class="form-control" id="agencyInfo" type="text" placeholder="Контактная информация" style="width: 40%;"></p>
+            </fieldset>
+
+            <br>
+            <!--АДРЕС ПРЕДСТАВИТЕЛЯ ЗАЯВИТЕЛЯ-->
+            <fieldset><legend>Адрес представителя заявителя</legend>
+                <input  id="agencyPost" value="Location" type="radio" name="rgroup1" checked="checked">Почтовый адрес постоянного проживания
+                <br><input  id="agencyVrem" value="LocationTemporary" type="radio" name="rgroup1">Почтовый адрес преимущественного проживания
+                <p><input class="form-control" type="text" id="postalCode" placeholder="Почтовый индекс" style="width: 40%;"></p>
+                <p>Регион
+                    <br>
+                    <select id="agencyRegion" class="form-control" size="1" style="width: 25%;">
+                        <option value="0">Калужская область</option>
+                    </select>
+                </p>
+                <p>Тип населённого пункта
+                    <br>
+                    <select id="agencyCity" class="form-control" size="1" style="width: 25%;">
+                        <option value="0">Город</option>
+                    </select>
+                    <input class="form-control" type="text" id="agencySettleName" placeholder="Название населённого пункта" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>
+                    <select id="agencyStreet" class="form-control" size="1" style="width: 25%;">
+                        <option value="0">Улица</option>
+                    </select>
+                    <input class="form-control" type="text" id="agencyStreetValue" placeholder="Улица" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>
+                    <select id="agencyL1TypeSelect" class="form-control" size="1" style="width: 25%;">
+                        <option value="0">Дом</option>
+                    </select>
+                    <input class="form-control" type="number" id="agencyl1value" placeholder="Номер дома" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>
+                    <select id="agencyL2TypeSelect" class="form-control" size="1" style="width: 25%;">
+                        <option value="0">Строение</option>
+                    </select>
+                    <input class="form-control" type="number" id="agencyl2value"  style="width: 40%;margin-top: 4px">
+                </p>
+                <p>
+                    <select id="agencyL3TypeSelect" class="form-control" size="1" style="width: 25%;">
+                        <option value="0">Корпус</option>
+                    </select>
+                    <input class="form-control" type="number" id="agencyl3value" style="width: 40%;margin-top: 4px">
+                </p>
+                <p>
+                    <select id="agencyApartmentTypeSelect" class="form-control" size="1" style="width: 25%;margin-top: 4px">
+                        <option value="0">Квартира</option>
+                    </select>
+                    <input class="form-control" type="number" id="agencyRoomNumber" placeholder="Номер квартиры" style="width: 40%;margin-top: 4px">
+                </p>
+                <p><input class="form-control" type="text" id="other" placeholder="Иное" style="width: 40%;"></p>
+                <p><textarea class="form-control" placeholder="Иное описание местоположения" id="otherLocation" style="width: 40%; height: 20%;"></textarea></p>
+            </fieldset>
+
+            <h3>Сведения об приложенных документах</h3>
+            <fieldset><legend>Документы</legend>
+                Вид документа
+                <select id="appDocType" class="form-control" size="1" style="width: 25%;">
+                    <option value="0">Паспорт гражданина РФ</option>
+                </select>
+                <p><input class="form-control"  id="appliedDocumentName" type="text" placeholder="Наименование" style="width: 40%;margin-top: 4px"></p>
+                <p><input class="form-control"  id="appDocSerial" type="number" placeholder="Серия документа"  style="width: 40%;"></p>
+                <p><input class="form-control"  id="appDocNumber" type="number" placeholder="Номер документа" style="width: 40%;"></p>
+                <p><input class="form-control"  id="appDocIssueOrgan" type="text" placeholder="Кем выдан" style="width: 40%;"></p>
+                <p><input class="form-control"  id="appDate" type="date" placeholder="Дата выдачи документа" style="width: 40%;"></p>
+                <p><input class="form-control"  id="appDocLoader" type="file" onclick="processFiles(this.files)" placeholder="Загрузка документа" style="width: 40%;"></p>
+                <p><input class="form-control"  id="appDocSignLoader" type="file" placeholder="Загрузка ЭЦП документа" style="width: 40%;"></p>
+            </fieldset>
+                <input type="button" class="btn btn-primary" style="float: right" onclick="addDoc()" VALUE="Добавить">
+            <hr>
+            <table id="attachDocumentsTable" class="display" width="100%"></table>
+            <hr>
+            <input type="button" class="btn btn-primary" style="float: right" value="Отправить форму" onclick="sendSOAP()">
+            </form>
+            <form action="/request" method="post">
+                <input type="file" name="filefile" id="filefile">
+                <input type="submit">
+            </form>
+        </div>
+        <div class="tab-pane" id="2">
+            <h3>История заявок</h3>
+            <table id="historyTable" class="display" width="100%"></table>
+        </div>
+        <div class="tab-pane" id="3">
+            <h3>Помощь</h3>
+            <fieldset><legend>Полезные ссылки</legend>
+                <a href="https://rosreestr.ru/wps/portal/cc_faq_query">Помощь и поддержка Росреестра</a>
+                <br><a href="https://rosreestr.ru/wps/portal/cc_ib_complaint" style="margin-top: 4px">Жалобы на сотрудников Росреестра</a>
+                <br><a href="https://rosreestr.ru/wps/portal/cc_ib_complaint" style="margin-top: 4px">Различные сервисы Росреестра</a>
+            </fieldset>
+            <br>
+            <fieldset><legend>Полезные контактные данные</legend>
+                <a href="tel:+1234567890">Номер телефона разработчика данного адаптера</a>
+                <br><a href="mailto:webmaster@example.com" style="margin-top: 4px">Электронная почта разработчика данного адаптера</a>
+                <br><a href="skype:YourSkypeName?call" style="margin-top: 4px">Скайп разработчика данного адаптера</a>
+            </fieldset>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

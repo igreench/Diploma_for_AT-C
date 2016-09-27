@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="postgres">
+      <visible>1</visible>
+    </database>
+    <schema id="2" parent="1" name="public">
+      <object-id>2200</object-id>
+      <comment>standard public schema</comment>
+      <introspection-timestamp>2016-06-20.12:16:16.991</introspection-timestamp>
+    </schema>
+  </database-model>
+</dataSource>
